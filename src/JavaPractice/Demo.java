@@ -8,26 +8,22 @@ public class Demo {
 		// Initialize Scanner
 		Scanner input = new Scanner(System.in);
 		// Prompt user for input 
-		System.out.println("Give me input!");
-		String kind = (input.nextLine()).toLowerCase();
-		System.out.println("Name your animal!");
+		System.out.println("Would you like a cat or a dog?");
+		String kind = input.nextLine();
+		System.out.println("What will you name it?");
 		String name = input.nextLine();
 		// Tell the user what they said
 		System.out.println("Success! You will adopt a " + kind + " named " + name);
 
 		// Do something based on the input
-		switch (kind) {
-			case "dog":
-				MainInterface dog = new Dog(name);
-				dog.speak();
-				break;
-			case "cat":
-				MainInterface cat = new Cat(name);
-				cat.speak();
-				break;
-			default:
-				System.out.println("Invalid input!");
-				break;
+		if (kind == "dog") {
+			MainInterface puppy = new Dog(name);
+			puppy.speak();
+		} else if (kind == "cat") {
+			MainInterface kitty = new Cat(name);
+			kitty.speak();
+		} else {
+			System.out.println("Invalid input!");
 		}
 	}
 
