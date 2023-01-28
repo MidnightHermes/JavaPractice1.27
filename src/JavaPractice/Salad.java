@@ -1,12 +1,14 @@
 package JavaPractice;
 
+import java.util.Scanner;
+
 public class Salad implements FoodItem {
 	
 	private int quantity;
 	private final int PRICE = 1;
 
-	public Salad(int newQuantity) {
-		setQuantity(newQuantity);
+	public Salad() {
+		setQuantity(getQuantity());
 	}
 	
 	@Override
@@ -18,6 +20,9 @@ public class Salad implements FoodItem {
 
 	@Override
 	public int getQuantity() {
+		System.out.println("How many?");
+		Scanner input = new Scanner(System.in);
+		int quantity = input.nextInt();
 		return quantity;
 	}
 
