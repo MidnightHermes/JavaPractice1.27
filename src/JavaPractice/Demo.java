@@ -15,18 +15,15 @@ public class Demo {
 		// Decide what to do based on input
 		if (((input.nextLine()).toLowerCase()).equals("burger")) {
 			System.out.println("Yummy!");
-			System.out.print("How many?");
-			int quantity = input.nextInt();
-			burger = new Burger(quantity);
+			burger = new Burger();
 			burger.total();
 		} else {
 			System.out.println("Healthy choice!");
-			System.out.print("How many?");
-			int quantity = input.nextInt();
-			salad = new Salad(quantity);
+			salad = new Salad();
 			salad.total();
 		}
 		
+		// Close the Scanner to prevent memory leaks
 		input.close();
 	}
 
